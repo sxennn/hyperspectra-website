@@ -214,22 +214,22 @@ function drawFlowBackground() {
     flowHeight * 0.38,
     flowWidth * 0.42
   );
-  gradient.addColorStop(0, "rgba(117,221,201,.055)");
-  gradient.addColorStop(.38, "rgba(183,227,61,.018)");
+  gradient.addColorStop(0, "rgba(117,221,201,.10)");
+  gradient.addColorStop(.38, "rgba(183,227,61,.035)");
   gradient.addColorStop(1, "rgba(9,11,13,0)");
   flowCtx.fillStyle = gradient;
   flowCtx.fillRect(0, 0, flowWidth, flowHeight);
 
   flowCtx.save();
-  flowCtx.globalAlpha = .12;
+  flowCtx.globalAlpha = .22;
   flowCtx.strokeStyle = "#75ddc9";
   flowCtx.lineWidth = .5;
-  for (let band = 0; band < 4; band++) {
+  for (let band = 0; band < 7; band++) {
     flowCtx.beginPath();
-    const baseY = flowHeight * (.18 + band * .19);
+    const baseY = flowHeight * (.10 + band * .14);
     for (let x = -40; x <= flowWidth + 40; x += 22) {
       const y = baseY +
-        Math.sin(x * .007 + t * (1.1 + band * .12) + band) * (18 + band * 5) +
+        Math.sin(x * .007 + t * (1.1 + band * .12) + band) * (24 + band * 3) +
         Math.cos(x * .013 - t * .7) * 7;
       if (x === -40) flowCtx.moveTo(x, y);
       else flowCtx.lineTo(x, y);
@@ -237,6 +237,19 @@ function drawFlowBackground() {
     flowCtx.stroke();
   }
   flowCtx.restore();
+
+  ambientParticles.forEach((particle, index) => {
+    const x = (particle.x + Math.sin(t * particle.speed + index) * particle.drift) % flowWidth;
+    const y = (particle.y + Math.cos(t * particle.speed * .7 + index) * particle.drift) % flowHeight;
+    const wrappedX = x < 0 ? x + flowWidth : x;
+    const wrappedY = y < 0 ? y + flowHeight : y;
+    flowCtx.beginPath();
+    flowCtx.fillStyle = index % 3 === 0
+      ? "rgba(183,227,61,.30)"
+      : "rgba(117,221,201,.22)";
+    flowCtx.arc(wrappedX, wrappedY, particle.size, 0, Math.PI * 2);
+    flowCtx.fill();
+  });
 
   cursorParticles.forEach((particle, index) => {
     particle.x += (particle.targetX - particle.x) * .18;
@@ -264,6 +277,13 @@ const cursorParticles = Array.from({ length: 14 }, (_, index) => ({
   targetY: -100,
   size: 1 + (index % 3) * .35,
   life: 0
+}));
+const ambientParticles = Array.from({ length: 38 }, (_, index) => ({
+  x: ((index * 197) % 997) / 997 * window.innerWidth,
+  y: ((index * 313) % 991) / 991 * window.innerHeight,
+  drift: 8 + (index % 5) * 5,
+  speed: .45 + (index % 7) * .08,
+  size: .6 + (index % 4) * .28
 }));
 let particleIndex = 0;
 const cursorDot = document.querySelector(".cursor-dot");
