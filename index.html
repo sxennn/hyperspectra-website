@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b0d" />
+  <meta name="description" content="Hyperspectra — AI-powered hyperspectral X-ray food inspection intelligence." />
+  <title>HYPERSPECTRA — See Beyond Contamination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="flowCanvas" aria-hidden="true"></canvas>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Hyperspectra home">
+      <span class="brand-mark" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+      <span>HYPERSPECTRA</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#platform">Platform</a>
+      <a href="#performance">Performance</a>
+      <a href="#deployment">Deployment</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="header-cta" href="#deployment">Request system brief <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="platform">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> ACTIVE INSPECTION SYSTEM <b>HS-01</b></div>
+          <h1>See beyond<br><em>contamination.</em></h1>
+          <p class="hero-lede">From raw harvest to global distribution, Hyperspectra turns every X-ray pulse into continuous spectral intelligence.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#performance">Explore the platform <span>→</span></a>
+            <button class="text-btn" id="demoToggle" type="button"><span class="pause-icon">Ⅱ</span> Pause simulation</button>
+          </div>
+        </div>
+
+        <div class="scan-panel" aria-label="Interactive spectral contamination scan">
+          <div class="panel-top">
+            <div><span>LIVE SPECTRAL FIELD</span><small>BAND 08—32 keV</small></div>
+            <div class="confidence"><small>CONF.</small><strong id="confidenceValue">98.7%</strong></div>
+          </div>
+          <div class="orbital-stage" id="orbitalStage">
+            <canvas id="scanCanvas" aria-hidden="true"></canvas>
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+            <div class="orbit orbit-c"></div>
+            <div class="scan-sweep"></div>
+            <div class="core">
+              <div class="core-rings"></div>
+              <span id="coreLabel">SCANNING</span>
+            </div>
+            <button class="anomaly marker-metal" data-type="Metal" data-confidence="99.2" aria-label="Inspect metal anomaly"><span>METAL</span></button>
+            <button class="anomaly marker-bone" data-type="Bone fragment" data-confidence="96.8" aria-label="Inspect bone fragment anomaly"><span>BONE</span></button>
+            <button class="anomaly marker-density" data-type="Density shift" data-confidence="94.1" aria-label="Inspect density shift anomaly"><span>Δρ</span></button>
+          </div>
+          <div class="panel-bottom">
+            <div class="telemetry">
+              <span>THROUGHPUT</span>
+              <strong><b id="throughputValue">420</b> <small>items/sec</small></strong>
+            </div>
+            <div class="telemetry">
+              <span>SPATIAL RESOLUTION</span>
+              <strong>&lt;0.5 <small>mm</small></strong>
+            </div>
+            <div class="telemetry compact">
+              <span>DETECTED</span>
+              <strong id="detectedCount">03</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-ribbon" aria-label="Illustrative system metrics">
+        <div><span>DEMO / SIGNAL DATA</span><b>ILLUSTRATIVE TELEMETRY</b></div>
+        <div><span>SPECTRAL BANDS</span><b>24</b></div>
+        <div><span>FRAME LATENCY</span><b>12 ms</b></div>
+        <div><span>LINE COVERAGE</span><b>360°</b></div>
+        <div><span>MODEL STATE</span><b class="green">NOMINAL</b></div>
+      </div>
+    </section>
+
+    <section class="loop-section" aria-labelledby="loopTitle">
+      <div class="section-heading">
+        <div>
+          <span class="section-index">01 / CLOSED LOOP</span>
+          <h2 id="loopTitle">Inspection that returns<br>to the source.</h2>
+        </div>
+        <p>Every decision closes a loop—protecting product, preserving yield, and improving the next production run.</p>
+      </div>
+
+      <div class="loop-layout">
+        <div class="loop-wheel" id="loopWheel">
+          <svg viewBox="0 0 600 600" aria-hidden="true">
+            <circle class="loop-guide" cx="300" cy="300" r="218"/>
+            <circle class="loop-progress" cx="300" cy="300" r="218"/>
+          </svg>
+          <button class="loop-node node-1 active" data-step="0"><span>01</span><strong>SCAN</strong></button>
+          <button class="loop-node node-2" data-step="1"><span>02</span><strong>DECOMPOSE</strong></button>
+          <button class="loop-node node-3" data-step="2"><span>03</span><strong>CLASSIFY</strong></button>
+          <button class="loop-node node-4" data-step="3"><span>04</span><strong>REJECT</strong></button>
+          <button class="loop-node node-5" data-step="4"><span>05</span><strong>FEEDBACK</strong></button>
+          <div class="loop-core">
+            <span id="loopStepNo">01 / 05</span>
+            <strong id="loopStepName">Photon capture</strong>
+          </div>
+        </div>
+        <div class="loop-detail">
+          <span class="detail-kicker" id="loopKicker">LIVE ACQUISITION</span>
+          <h3 id="loopDetailTitle">Scan</h3>
+          <p id="loopDetailText">Photon-counting bands capture material energy signatures as product moves at line speed.</p>
+          <div class="detail-stat">
+            <span id="loopStatLabel">FRAME WINDOW</span>
+            <strong id="loopStatValue">12 ms</strong>
+          </div>
+          <div class="detail-progress"><span id="detailProgress"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="performance" id="performance" aria-labelledby="performanceTitle">
+      <div class="section-heading performance-heading">
+        <div>
+          <span class="section-index">02 / METROLOGY</span>
+          <h2 id="performanceTitle">Spectral evidence,<br>measured precisely.</h2>
+        </div>
+        <div class="chart-tabs" role="tablist" aria-label="Performance chart type">
+          <button class="active" role="tab" aria-selected="true" data-chart="roc">ROC</button>
+          <button role="tab" aria-selected="false" data-chart="histogram">Density</button>
+          <button role="tab" aria-selected="false" data-chart="reject">Reject rate</button>
+        </div>
+      </div>
+
+      <div class="performance-grid">
+        <article class="chart-card">
+          <div class="chart-header">
+            <div>
+              <span id="chartKicker">CLASSIFICATION PERFORMANCE</span>
+              <h3 id="chartTitle">Receiver operating characteristic</h3>
+            </div>
+            <div class="chart-legend">
+              <span><i class="legend-multi"></i>Multi-band photon counting</span>
+              <span><i class="legend-conventional"></i>Conventional X-ray</span>
+            </div>
+          </div>
+          <div class="chart-wrap" id="chartWrap">
+            <svg class="roc-chart" id="rocChart" viewBox="0 0 760 410" role="img" aria-label="Illustrative ROC comparison chart">
+              <g class="grid">
+                <line x1="68" y1="40" x2="720" y2="40"/><line x1="68" y1="132" x2="720" y2="132"/>
+                <line x1="68" y1="224" x2="720" y2="224"/><line x1="68" y1="316" x2="720" y2="316"/>
+                <line x1="68" y1="40" x2="68" y2="360"/><line x1="231" y1="40" x2="231" y2="360"/>
+                <line x1="394" y1="40" x2="394" y2="360"/><line x1="557" y1="40" x2="557" y2="360"/>
+                <line x1="720" y1="40" x2="720" y2="360"/>
+              </g>
+              <g class="axis-labels">
+                <text x="68" y="382">0</text><text x="231" y="382">25</text><text x="394" y="382">50</text>
+                <text x="557" y="382">75</text><text x="720" y="382">100</text>
+                <text x="68" y="66" transform="rotate(-90 68 66)">Sensitivity (%)</text>
+                <text x="394" y="405">False positive rate (%)</text>
+              </g>
+              <path class="conventional-line" d="M68,360 C120,290 180,220 250,164 C330,100 450,72 720,40"/>
+              <path class="multi-line" d="M68,360 C150,190 240,92 350,58 C460,30 580,38 720,40"/>
+              <g class="roc-point"><circle cx="350" cy="58" r="7"/><line x1="350" y1="58" x2="350" y2="360"/><line x1="68" y1="58" x2="350" y2="58"/></g>
+            </svg>
+          </div>
+          <div class="chart-footer"><span>ILLUSTRATIVE DEMONSTRATION DATA</span><span>THRESHOLD 0.91</span></div>
+        </article>
+
+        <aside class="metrics-column">
+          <article class="metric-card">
+            <div class="metric-card-head"><span>DETECTION CONF.</span><small>DEMO</small></div>
+            <div class="radial-gauge" style="--value:98.7">
+              <div><strong>98.7<small>%</small></strong><span>MEAN</span></div>
+            </div>
+          </article>
+          <article class="metric-card metric-card-small">
+            <div class="metric-card-head"><span>FALSE-REJECT TREND</span><small>SIMULATED</small></div>
+            <div class="spark-bars" aria-label="Illustrative declining false reject trend">
+              <i style="height:82%"></i><i style="height:73%"></i><i style="height:69%"></i><i style="height:54%"></i>
+              <i style="height:48%"></i><i style="height:35%"></i><i style="height:28%"></i><i style="height:21%"></i>
+            </div>
+            <div class="trend-stat"><strong>−62%</strong><span>vs. conventional</span></div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="deployment" id="deployment" aria-labelledby="deploymentTitle">
+      <div class="deployment-head">
+        <div>
+          <span class="section-index">03 / ENTERPRISE DEPLOYMENT</span>
+          <h2 id="deploymentTitle">Built for the<br>industrial continuum.</h2>
+        </div>
+        <p>Compatible with high-throughput food lines, existing automation layers, and regulated operating environments.</p>
+      </div>
+      <div class="deployment-grid">
+        <article class="spec-feature">
+          <div class="spec-icon conveyor-icon" aria-hidden="true">
+            <span></span><i></i><i></i><i></i>
+          </div>
+          <span class="spec-index">01</span>
+          <h3>In-line conveyor</h3>
+          <p>Modular integration for food-processing and packaging lines.</p>
+          <dl><div><dt>Target speed</dt><dd>420 items/sec</dd></div><div><dt>Envelope</dt><dd>Custom</dd></div></dl>
+        </article>
+        <article class="spec-feature">
+          <div class="spec-icon ring-icon" aria-hidden="true"><span></span></div>
+          <span class="spec-index">02</span>
+          <h3>Cleanroom-ready</h3>
+          <p>Sealed industrial enclosure designed for washdown environments.</p>
+          <dl><div><dt>Target rating</dt><dd>IP69K</dd></div><div><dt>Hygiene</dt><dd>SS316 L</dd></div></dl>
+        </article>
+        <article class="spec-feature">
+          <div class="spec-icon api-icon" aria-hidden="true"><span>{ }</span></div>
+          <span class="spec-index">03</span>
+          <h3>MES / API telemetry</h3>
+          <p>Structured events and spectral summaries for automation ecosystems.</p>
+          <dl><div><dt>Interfaces</dt><dd>REST / OPC UA</dd></div><div><dt>Edge compute</dt><dd>On-device</dd></div></dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="team-section" id="team" aria-labelledby="teamTitle">
+      <div class="team-head">
+        <div>
+          <span class="section-index">04 / THE TEAM</span>
+          <h2 id="teamTitle">Built by engineers<br>who inspect the edge.</h2>
+        </div>
+        <p>Hyperspectra brings multidisciplinary expertise to spectral imaging, food systems, and intelligent industrial automation.</p>
+      </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="portrait portrait-sean" aria-label="Portrait placeholder for Sean Cordova"><span>SC</span></div>
+          <div class="team-meta"><span>01</span><small>TEAM MEMBER</small></div>
+          <h3>Sean Cordova</h3>
+        </article>
+        <article class="team-card">
+          <div class="portrait portrait-zareth" aria-label="Portrait placeholder for Zareth Lim"><span>ZL</span></div>
+          <div class="team-meta"><span>02</span><small>TEAM MEMBER</small></div>
+          <h3>Zareth Lim</h3>
+        </article>
+        <article class="team-card">
+          <div class="portrait portrait-aptahi" aria-label="Portrait placeholder for Aptahi Khan"><span>AK</span></div>
+          <div class="team-meta"><span>03</span><small>TEAM MEMBER</small></div>
+          <h3>Aptahi Khan</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="section-index">PARTNER WITH HYPERSPECTRA</span>
+      <h2>Make every spectrum<br>an instrument of yield.</h2>
+      <a class="primary-btn light" href="mailto:partners@hyperspectra.example">Request a system brief <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span>HYPERSPECTRA</span></a>
+    <p>AI-powered hyperspectral inspection</p>
+    <span>© 2026 HYPERSPECTRA</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
