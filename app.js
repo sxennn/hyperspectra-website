@@ -244,7 +244,11 @@ function drawFlowBackground() {
     particle.life *= .94;
     if (particle.life > .08) {
       flowCtx.beginPath();
-      flowCtx.fillStyle = `rgba(183,227,61,${particle.life * .55})`;
+      flowCtx.fillStyle = `rgba(9,11,13,${particle.life * .72})`;
+      flowCtx.arc(particle.x, particle.y, particle.size + 1.1, 0, Math.PI * 2);
+      flowCtx.fill();
+      flowCtx.beginPath();
+      flowCtx.fillStyle = `rgba(183,227,61,${particle.life * .92})`;
       flowCtx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
       flowCtx.fill();
     }
@@ -262,18 +266,12 @@ const cursorParticles = Array.from({ length: 14 }, (_, index) => ({
   life: 0
 }));
 let particleIndex = 0;
-let ringX = -100;
-let ringY = -100;
 const cursorDot = document.querySelector(".cursor-dot");
-const cursorRing = document.querySelector(".cursor-ring");
 
 if (window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("pointermove", (event) => {
     document.body.classList.add("cursor-active");
-    cursorDot.style.transform = `translate(${event.clientX - 2.5}px,${event.clientY - 2.5}px)`;
-    ringX += (event.clientX - ringX) * .16;
-    ringY += (event.clientY - ringY) * .16;
-    cursorRing.style.transform = `translate(${ringX - 17}px,${ringY - 17}px)`;
+    cursorDot.style.transform = `translate(${event.clientX - 3.5}px,${event.clientY - 3.5}px)`;
 
     const particle = cursorParticles[particleIndex++ % cursorParticles.length];
     particle.targetX = event.clientX + (Math.random() - .5) * 12;
@@ -281,18 +279,6 @@ if (window.matchMedia("(pointer: fine)").matches) {
     particle.life = .7;
   });
   window.addEventListener("pointerleave", () => document.body.classList.remove("cursor-active"));
-  document.querySelectorAll("a,button,.team-card,.loop-node").forEach((target) => {
-    target.addEventListener("pointerenter", () => document.body.classList.add("cursor-hover"));
-    target.addEventListener("pointerleave", () => document.body.classList.remove("cursor-hover"));
-  });
-
-  function animateCursorRing() {
-    ringX += (ringX - ringX) * 0;
-    ringY += (ringY - ringY) * 0;
-    cursorRing.style.transform = `translate(${ringX - 17}px,${ringY - 17}px)`;
-    if (!reduceMotion) requestAnimationFrame(animateCursorRing);
-  }
-  animateCursorRing();
 }
 
 drawFlowBackground();

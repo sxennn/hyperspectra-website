@@ -29,14 +29,17 @@ body {
   opacity: .72;
 }
 .site-header, main, footer { position: relative; z-index: 2; }
-.cursor-dot,.cursor-ring {
+.cursor-dot {
   position:fixed; left:0; top:0; z-index:100; pointer-events:none; border-radius:50%;
   opacity:0; transform:translate(-100px,-100px);
 }
-.cursor-dot { width:5px;height:5px;background:#d8ff73;box-shadow:0 0 10px rgba(183,227,61,.8); }
-.cursor-ring { width:34px;height:34px;border:1px solid rgba(216,255,115,.42);transition:width .18s,height .18s,border-color .18s,opacity .18s; }
-body.cursor-active .cursor-dot,body.cursor-active .cursor-ring { opacity:1; }
-body.cursor-hover .cursor-ring { width:48px;height:48px;border-color:rgba(117,221,201,.72); }
+.cursor-dot {
+  width:7px;height:7px;
+  background:#b7e33d;
+  border:1px solid rgba(9,11,13,.82);
+  box-shadow:0 0 0 1px rgba(255,255,255,.92),0 0 12px rgba(183,227,61,.42);
+}
+body.cursor-active .cursor-dot { opacity:1; }
 button, a { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -266,7 +269,7 @@ h1 em { font-style: normal; color: #9ea7a2; }
 }
 @media (prefers-reduced-motion: reduce) {
   #flowCanvas { opacity:.25; }
-  .cursor-dot,.cursor-ring { display:none; }
+  .cursor-dot { display:none; }
   *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; }
 }
 footer { height:100px;padding:0 clamp(20px,4vw,64px);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;border-top:1px solid var(--line);font-size:9px;color:#747d79;font-family:"DM Mono"; }
