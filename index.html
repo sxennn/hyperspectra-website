@@ -3,273 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090b0d" />
-  <meta name="description" content="Hyperspectra — AI-powered hyperspectral X-ray food inspection intelligence." />
-  <title>HYPERSPECTRA — See Beyond Contamination</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <meta name="theme-color" content="#08102C" />
+  <meta name="description" content="FrameSync — one thoughtful composition, perfectly framed for every format." />
+  <title>FrameSync — Social layout studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <canvas id="flowCanvas" aria-hidden="true"></canvas>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Hyperspectra home">
-      <span class="brand-mark" aria-hidden="true">
-        <i></i><i></i><i></i>
-      </span>
-      <span>HYPERSPECTRA</span>
+  <div class="ambient-scene" aria-hidden="true">
+    <svg class="cherry-tree" viewBox="0 0 1000 1100" preserveAspectRatio="xMaxYMid slice">
+      <g class="tree-branches">
+        <path d="M890 1120 C820 976 863 842 774 736 C696 644 713 547 624 458 C555 388 541 284 452 204" />
+        <path d="M790 828 C693 805 625 737 570 663 C522 597 463 573 390 563" />
+        <path d="M716 679 C795 596 826 521 816 424 C807 345 843 288 891 241" />
+        <path d="M630 468 C704 414 735 346 728 274 C720 209 750 150 796 105" />
+        <path d="M533 350 C445 347 390 311 348 245 C310 186 251 164 180 171" />
+        <path d="M453 207 C480 142 462 91 424 42" />
+      </g>
+      <g class="blossom blossom-one" transform="translate(452 204)">
+        <circle cx="0" cy="-22" r="15"/><circle cx="21" cy="-7" r="15"/><circle cx="13" cy="18" r="15"/><circle cx="-13" cy="18" r="15"/><circle cx="-21" cy="-7" r="15"/><circle class="flower-center" r="8"/>
+      </g>
+      <g class="blossom blossom-two" transform="translate(728 274)">
+        <circle cx="0" cy="-22" r="14"/><circle cx="21" cy="-7" r="14"/><circle cx="13" cy="18" r="14"/><circle cx="-13" cy="18" r="14"/><circle cx="-21" cy="-7" r="14"/><circle class="flower-center" r="7"/>
+      </g>
+      <g class="blossom blossom-three" transform="translate(816 424)">
+        <circle cx="0" cy="-22" r="14"/><circle cx="21" cy="-7" r="14"/><circle cx="13" cy="18" r="14"/><circle cx="-13" cy="18" r="14"/><circle cx="-21" cy="-7" r="14"/><circle class="flower-center" r="7"/>
+      </g>
+      <g class="blossom blossom-four" transform="translate(390 563)">
+        <circle cx="0" cy="-22" r="13"/><circle cx="21" cy="-7" r="13"/><circle cx="13" cy="18" r="13"/><circle cx="-13" cy="18" r="13"/><circle cx="-21" cy="-7" r="13"/><circle class="flower-center" r="7"/>
+      </g>
+      <g class="blossom blossom-five" transform="translate(891 241)">
+        <circle cx="0" cy="-20" r="13"/><circle cx="19" cy="-6" r="13"/><circle cx="12" cy="16" r="13"/><circle cx="-12" cy="16" r="13"/><circle cx="-19" cy="-6" r="13"/><circle class="flower-center" r="7"/>
+      </g>
+      <g class="blossom blossom-six" transform="translate(180 171)">
+        <circle cx="0" cy="-20" r="13"/><circle cx="19" cy="-6" r="13"/><circle cx="12" cy="16" r="13"/><circle cx="-12" cy="16" r="13"/><circle cx="-19" cy="-6" r="13"/><circle class="flower-center" r="7"/>
+      </g>
+      <g class="blossom blossom-seven" transform="translate(570 663)">
+        <circle cx="0" cy="-20" r="13"/><circle cx="19" cy="-6" r="13"/><circle cx="12" cy="16" r="13"/><circle cx="-12" cy="16" r="13"/><circle cx="-19" cy="-6" r="13"/><circle class="flower-center" r="7"/>
+      </g>
+    </svg>
+  </div>
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="FrameSync home">
+      <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>frame<span class="wordmark-light">sync</span></span>
     </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#platform">Platform</a>
-      <a href="#performance">Performance</a>
-      <a href="#deployment">Deployment</a>
-      <a href="#team">Team</a>
-    </nav>
-    <a class="header-cta" href="#deployment">Request system brief <span>↗</span></a>
+    <div class="topbar-center"><span class="status-dot"></span> Untitled project <span class="saved-label">Saved locally</span></div>
+    <div class="topbar-actions">
+      <button class="button button-quiet" id="helpButton" type="button" aria-haspopup="dialog" title="Step-by-step guide"><span aria-hidden="true">?</span> How to use</button>
+      <button class="button button-quiet" id="sampleButton" type="button"><span aria-hidden="true">✦</span> Try sample photos</button>
+      <button class="button button-dark" id="exportTopButton" type="button">Download PNGs <span aria-hidden="true">↗</span></button>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero" id="platform">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="live-dot"></span> ACTIVE INSPECTION SYSTEM <b>HS-01</b></div>
-          <h1>See beyond<br><em>contamination.</em></h1>
-          <p class="hero-lede">From raw harvest to global distribution, Hyperspectra turns every X-ray pulse into continuous spectral intelligence.</p>
-          <div class="hero-actions">
-            <a class="primary-btn" href="#performance">Explore the platform <span>→</span></a>
-            <button class="text-btn" id="demoToggle" type="button"><span class="pause-icon">Ⅱ</span> Pause simulation</button>
-          </div>
-        </div>
-
-        <div class="scan-panel" aria-label="Interactive spectral contamination scan">
-          <div class="panel-top">
-            <div><span>LIVE SPECTRAL FIELD</span><small>BAND 08—32 keV</small></div>
-            <div class="confidence"><small>CONF.</small><strong id="confidenceValue">98.7%</strong></div>
-          </div>
-          <div class="orbital-stage" id="orbitalStage">
-            <canvas id="scanCanvas" aria-hidden="true"></canvas>
-            <div class="orbit orbit-a"></div>
-            <div class="orbit orbit-b"></div>
-            <div class="orbit orbit-c"></div>
-            <div class="scan-sweep"></div>
-            <div class="core">
-              <div class="core-rings"></div>
-              <span id="coreLabel">SCANNING</span>
-            </div>
-            <button class="anomaly marker-metal" data-type="Metal" data-confidence="99.2" aria-label="Inspect metal anomaly"><span>METAL</span></button>
-            <button class="anomaly marker-bone" data-type="Bone fragment" data-confidence="96.8" aria-label="Inspect bone fragment anomaly"><span>BONE</span></button>
-            <button class="anomaly marker-density" data-type="Density shift" data-confidence="94.1" aria-label="Inspect density shift anomaly"><span>Δρ</span></button>
-          </div>
-          <div class="panel-bottom">
-            <div class="telemetry">
-              <span>THROUGHPUT</span>
-              <strong><b id="throughputValue">420</b> <small>items/sec</small></strong>
-            </div>
-            <div class="telemetry">
-              <span>SPATIAL RESOLUTION</span>
-              <strong>&lt;0.5 <small>mm</small></strong>
-            </div>
-            <div class="telemetry compact">
-              <span>DETECTED</span>
-              <strong id="detectedCount">03</strong>
-            </div>
-          </div>
+  <main class="studio">
+    <aside class="left-panel" aria-label="Layouts and photos">
+      <div class="panel-section">
+        <div class="section-title"><span>01</span><h2>Choose a layout</h2></div>
+        <div class="template-list" role="group" aria-label="Layout templates">
+          <button class="template-card active" data-layout="gallery" type="button">
+            <span class="template-art art-gallery"><i></i></span><span class="template-copy"><b>Gallery mat</b><small>One photo, room to breathe</small></span><span class="template-check">✓</span>
+          </button>
+          <button class="template-card" data-layout="filmstrip" type="button">
+            <span class="template-art art-film"><i></i><i></i><i></i></span><span class="template-copy"><b>Film strip</b><small>Stack up to three moments</small></span><span class="template-check">✓</span>
+          </button>
+          <button class="template-card" data-layout="starstrip" type="button">
+            <span class="template-art art-starstrip"><i></i><i></i><i></i><i></i></span><span class="template-copy"><b>Midnight star film</b><small>Four frames, hand-drawn stars</small></span><span class="template-check">✓</span>
+          </button>
+          <button class="template-card" data-layout="collage" type="button">
+            <span class="template-art art-collage"><i></i></span><span class="template-copy"><b>Scrapbook</b><small>A little overlap, a lot of mood</small></span><span class="template-check">✓</span>
+          </button>
+          <button class="template-card" data-layout="teaser" type="button">
+            <span class="template-art art-teaser"><i></i><i></i></span><span class="template-copy"><b>Story teaser</b><small>Turn your post into a preview</small></span><span class="template-check">✓</span>
+          </button>
+          <button class="template-card" data-layout="panorama" type="button">
+            <span class="template-art art-panorama"><i></i></span><span class="template-copy"><b>Panorama</b><small>Two slides, one wide moment</small></span><span class="template-check">✓</span>
+          </button>
         </div>
       </div>
 
-      <div class="metric-ribbon" aria-label="Illustrative system metrics">
-        <div><span>DEMO / SIGNAL DATA</span><b>ILLUSTRATIVE TELEMETRY</b></div>
-        <div><span>SPECTRAL BANDS</span><b>24</b></div>
-        <div><span>FRAME LATENCY</span><b>12 ms</b></div>
-        <div><span>LINE COVERAGE</span><b>360°</b></div>
-        <div><span>MODEL STATE</span><b class="green">NOMINAL</b></div>
+      <div class="panel-section photos-section">
+        <div class="section-title"><span>02</span><h2>Your photos</h2><span class="photo-count" id="photoCount">0</span></div>
+        <button class="dropzone" id="dropzone" type="button">
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <b>Drop photos here</b>
+          <small>or <u>browse files</u> · JPG, PNG, WEBP</small>
+        </button>
+        <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
+        <div class="photo-library" id="photoLibrary" aria-live="polite"></div>
+        <div class="slots-heading"><span>PHOTO FRAMES</span><small>Click a photo to fill the highlighted frame</small></div>
+        <div class="slot-list" id="slotList"></div>
       </div>
+      <div class="left-footnote"><span class="lock-icon" aria-hidden="true">⌑</span> Photos stay on your device</div>
+    </aside>
+
+    <section class="workspace" aria-label="Composition preview">
+      <div class="workspace-heading">
+        <div><p class="eyebrow">YOUR COMPOSITION</p><h1>One moment. <em>Everywhere.</em></h1></div>
+        <div class="preview-switch" role="group" aria-label="Preview layout">
+          <button class="active" data-preview="paired" type="button">Paired view</button>
+          <button data-preview="feed" type="button">Feed only</button>
+          <button data-preview="story" type="button">Story only</button>
+        </div>
+      </div>
+
+      <div class="workflow-guide" aria-live="polite">
+        <div class="workflow-copy">
+          <span>QUICK GUIDE</span>
+          <strong id="workflowTitle">Start with a layout</strong>
+          <small id="workflowHint">Then try sample photos or add your own.</small>
+        </div>
+        <div class="workflow-path" aria-label="Choose a layout, fill the photo frames, and download">
+          <b>1 <span>Layout</span></b><i>→</i><b>2 <span>Photos</span></b><i>→</i><b>3 <span>Download</span></b>
+        </div>
+      </div>
+
+      <div class="preview-stage paired" id="previewStage">
+        <article class="preview-card feed-card">
+          <div class="preview-label"><span><i class="feed-symbol" aria-hidden="true"></i> FEED POST</span><small>4:5 · 1080 × 1350</small></div>
+          <div class="canvas-wrap feed-wrap"><canvas id="feedCanvas" width="1080" height="1350" aria-label="Instagram feed composition preview"></canvas></div>
+          <div class="preview-footer"><span id="feedPhotoMeta">Add a photo to begin</span><button class="icon-button download-button" data-export="feed" aria-label="Download feed PNG" title="Download feed PNG">↓</button></div>
+        </article>
+        <article class="preview-card story-card">
+          <div class="preview-label"><span><i class="story-symbol" aria-hidden="true"></i> MATCHING STORY</span><small>9:16 · 1080 × 1920</small></div>
+          <div class="canvas-wrap story-wrap"><canvas id="storyCanvas" width="1080" height="1920" aria-label="Instagram story composition preview"></canvas></div>
+          <div class="preview-footer"><span id="storyPhotoMeta">Synced to feed style</span><button class="icon-button download-button" data-export="story" aria-label="Download story PNG" title="Download story PNG">↓</button></div>
+        </article>
+      </div>
+      <p class="stage-note"><span class="sparkle" aria-hidden="true">✳</span> Photos stay uncropped. Your background, borders, and type sync across both formats.</p>
     </section>
 
-    <section class="loop-section" aria-labelledby="loopTitle">
-      <div class="section-heading">
-        <div>
-          <span class="section-index">01 / CLOSED LOOP</span>
-          <h2 id="loopTitle">Inspection that returns<br>to the source.</h2>
-        </div>
-        <p>Every decision closes a loop—protecting product, preserving yield, and improving the next production run.</p>
-      </div>
-
-      <div class="loop-layout">
-        <div class="loop-wheel" id="loopWheel">
-          <svg viewBox="0 0 600 600" aria-hidden="true">
-            <circle class="loop-guide" cx="300" cy="300" r="218"/>
-            <circle class="loop-progress" cx="300" cy="300" r="218"/>
-          </svg>
-          <button class="loop-node node-1 active" data-step="0"><span>01</span><strong>SCAN</strong></button>
-          <button class="loop-node node-2" data-step="1"><span>02</span><strong>DECOMPOSE</strong></button>
-          <button class="loop-node node-3" data-step="2"><span>03</span><strong>CLASSIFY</strong></button>
-          <button class="loop-node node-4" data-step="3"><span>04</span><strong>REJECT</strong></button>
-          <button class="loop-node node-5" data-step="4"><span>05</span><strong>FEEDBACK</strong></button>
-          <div class="loop-core">
-            <span id="loopStepNo">01 / 05</span>
-            <strong id="loopStepName">Photon capture</strong>
+    <aside class="right-panel" aria-label="Design controls">
+      <div class="inspector-heading"><div><p class="eyebrow">DESIGN KIT</p><h2>Make it yours</h2></div><button id="resetButton" class="reset-button" type="button" title="Reset design controls">Reset</button></div>
+      <div class="inspector-scroll">
+        <section class="control-section">
+          <div class="control-heading"><h3>Canvas color</h3><span class="sync-pill">SYNCED</span></div>
+          <div class="swatches">
+            <button class="swatch active" data-color="#F7F5F0" style="--swatch:#F7F5F0" aria-label="Warm paper background" title="Warm paper" type="button"></button>
+            <button class="swatch" data-color="#121212" style="--swatch:#121212" aria-label="Matte charcoal background" title="Matte charcoal" type="button"></button>
+            <button class="swatch" data-color="#0B1957" style="--swatch:#0B1957" aria-label="Midnight navy background" title="Midnight navy" type="button"></button>
+            <button class="swatch" data-color="#FFDBD1" style="--swatch:#FFDBD1" aria-label="Blush background" title="Blush" type="button"></button>
+            <button class="swatch" data-color="#FA9EBC" style="--swatch:#FA9EBC" aria-label="Soft pink background" title="Soft pink" type="button"></button>
+            <label class="color-picker-wrap" title="Choose a custom color"><input id="colorPicker" type="color" value="#F7F5F0" aria-label="Custom canvas color" /><span>＋</span></label>
+            <label class="hex-input"><span>#</span><input id="hexInput" value="F7F5F0" maxlength="6" aria-label="Hex background color" spellcheck="false" /></label>
           </div>
-        </div>
-        <div class="loop-detail">
-          <span class="detail-kicker" id="loopKicker">LIVE ACQUISITION</span>
-          <h3 id="loopDetailTitle">Scan</h3>
-          <p id="loopDetailText">Photon-counting bands capture material energy signatures as product moves at line speed.</p>
-          <div class="detail-stat">
-            <span id="loopStatLabel">FRAME WINDOW</span>
-            <strong id="loopStatValue">12 ms</strong>
-          </div>
-          <div class="detail-progress"><span id="detailProgress"></span></div>
-        </div>
-      </div>
-    </section>
+          <label class="toggle-row"><span><b>Paper grain</b><small>A soft, printed finish</small></span><input id="grainToggle" type="checkbox" /><i class="toggle-ui"></i></label>
+        </section>
 
-    <section class="performance" id="performance" aria-labelledby="performanceTitle">
-      <div class="section-heading performance-heading">
-        <div>
-          <span class="section-index">02 / METROLOGY</span>
-          <h2 id="performanceTitle">Spectral evidence,<br>measured precisely.</h2>
-        </div>
-        <div class="chart-tabs" role="tablist" aria-label="Performance chart type">
-          <button class="active" role="tab" aria-selected="true" data-chart="roc">ROC</button>
-          <button role="tab" aria-selected="false" data-chart="histogram">Density</button>
-          <button role="tab" aria-selected="false" data-chart="reject">Reject rate</button>
-        </div>
-      </div>
+        <section class="control-section">
+          <div class="control-heading"><h3>Type pairing</h3></div>
+          <label class="select-wrap"><span class="sr-only">Choose font pairing</span><select id="fontSelect">
+            <option value="editorial">Editorial · serif + sans</option>
+            <option value="modern">Modern · clean sans</option>
+          </select><span aria-hidden="true">⌄</span></label>
+          <label class="text-field"><span>CAPTION</span><input id="captionInput" value="A slower kind of Sunday." maxlength="70" /></label>
+          <label class="text-field"><span>TIME / LOCATION</span><input id="timestampInput" value="SUNDAY, 9:41 AM · BIG SUR" maxlength="50" /></label>
+        </section>
 
-      <div class="performance-grid">
-        <article class="chart-card">
-          <div class="chart-header">
-            <div>
-              <span id="chartKicker">CLASSIFICATION PERFORMANCE</span>
-              <h3 id="chartTitle">Receiver operating characteristic</h3>
-            </div>
-            <div class="chart-legend">
-              <span><i class="legend-multi"></i>Multi-band photon counting</span>
-              <span><i class="legend-conventional"></i>Conventional X-ray</span>
-            </div>
-          </div>
-          <div class="chart-wrap" id="chartWrap">
-            <svg class="roc-chart" id="rocChart" viewBox="0 0 760 410" role="img" aria-label="Illustrative ROC comparison chart">
-              <g class="grid">
-                <line x1="68" y1="40" x2="720" y2="40"/><line x1="68" y1="132" x2="720" y2="132"/>
-                <line x1="68" y1="224" x2="720" y2="224"/><line x1="68" y1="316" x2="720" y2="316"/>
-                <line x1="68" y1="40" x2="68" y2="360"/><line x1="231" y1="40" x2="231" y2="360"/>
-                <line x1="394" y1="40" x2="394" y2="360"/><line x1="557" y1="40" x2="557" y2="360"/>
-                <line x1="720" y1="40" x2="720" y2="360"/>
-              </g>
-              <g class="axis-labels">
-                <text x="68" y="382">0</text><text x="231" y="382">25</text><text x="394" y="382">50</text>
-                <text x="557" y="382">75</text><text x="720" y="382">100</text>
-                <text x="68" y="66" transform="rotate(-90 68 66)">Sensitivity (%)</text>
-                <text x="394" y="405">False positive rate (%)</text>
-              </g>
-              <path class="conventional-line" d="M68,360 C120,290 180,220 250,164 C330,100 450,72 720,40"/>
-              <path class="multi-line" d="M68,360 C150,190 240,92 350,58 C460,30 580,38 720,40"/>
-              <g class="roc-point"><circle cx="350" cy="58" r="7"/><line x1="350" y1="58" x2="350" y2="360"/><line x1="68" y1="58" x2="350" y2="58"/></g>
-            </svg>
-          </div>
-          <div class="chart-footer"><span>ILLUSTRATIVE DEMONSTRATION DATA</span><span>THRESHOLD 0.91</span></div>
-        </article>
+        <section class="control-section">
+          <div class="control-heading"><h3>Frame & spacing</h3></div>
+          <label class="range-control"><span>Photo scale <output id="scaleOutput">70%</output></span><input id="scaleSlider" type="range" min="48" max="86" value="70" /></label>
+          <label class="range-control"><span>Border weight <output id="borderOutput">2 px</output></span><input id="borderSlider" type="range" min="0" max="12" value="2" /></label>
+          <label class="range-control"><span>Corner radius <output id="radiusOutput">4 px</output></span><input id="radiusSlider" type="range" min="0" max="28" value="4" /></label>
+          <label class="range-control"><span>Canvas padding <output id="paddingOutput">10%</output></span><input id="paddingSlider" type="range" min="4" max="22" value="10" /></label>
+        </section>
 
-        <aside class="metrics-column">
-          <article class="metric-card">
-            <div class="metric-card-head"><span>DETECTION CONF.</span><small>DEMO</small></div>
-            <div class="radial-gauge" style="--value:98.7">
-              <div><strong>98.7<small>%</small></strong><span>MEAN</span></div>
-            </div>
-          </article>
-          <article class="metric-card metric-card-small">
-            <div class="metric-card-head"><span>FALSE-REJECT TREND</span><small>SIMULATED</small></div>
-            <div class="spark-bars" aria-label="Illustrative declining false reject trend">
-              <i style="height:82%"></i><i style="height:73%"></i><i style="height:69%"></i><i style="height:54%"></i>
-              <i style="height:48%"></i><i style="height:35%"></i><i style="height:28%"></i><i style="height:21%"></i>
-            </div>
-            <div class="trend-stat"><strong>−62%</strong><span>vs. conventional</span></div>
-          </article>
-        </aside>
-      </div>
-    </section>
+        <section class="control-section collage-controls" id="collageControls">
+          <div class="control-heading"><h3>Scrapbook backdrop</h3><span class="sync-pill">LAYER 01</span></div>
+          <label class="range-control"><span>Photo opacity <output id="collageOpacityOutput">28%</output></span><input id="collageOpacitySlider" type="range" min="10" max="70" value="28" /></label>
+          <label class="range-control"><span>Background blur <output id="collageBlurOutput">18 px</output></span><input id="collageBlurSlider" type="range" min="0" max="48" value="18" /></label>
+        </section>
 
-    <section class="deployment" id="deployment" aria-labelledby="deploymentTitle">
-      <div class="deployment-head">
-        <div>
-          <span class="section-index">03 / ENTERPRISE DEPLOYMENT</span>
-          <h2 id="deploymentTitle">Built for the<br>industrial continuum.</h2>
-        </div>
-        <p>Compatible with high-throughput food lines, existing automation layers, and regulated operating environments.</p>
+        <section class="control-section teaser-controls" id="teaserControls">
+          <div class="control-heading"><h3>Story teaser</h3><span class="sync-pill">STORY</span></div>
+          <label class="select-wrap"><span class="sr-only">Choose teaser mode</span><select id="teaserSelect">
+            <option value="cutout">Peek-through cutout</option>
+            <option value="blur">Color-matched blur</option>
+            <option value="continued">Continued on feed</option>
+          </select><span aria-hidden="true">⌄</span></label>
+          <label class="text-field"><span>BADGE / CALLOUT</span><input id="badgeInput" value="NEW POST" maxlength="34" /></label>
+          <label class="range-control" id="opacityControl"><span>Backdrop softness <output id="blurOutput">24 px</output></span><input id="blurSlider" type="range" min="8" max="50" value="24" /></label>
+        </section>
       </div>
-      <div class="deployment-grid">
-        <article class="spec-feature">
-          <div class="spec-icon conveyor-icon" aria-hidden="true">
-            <span></span><i></i><i></i><i></i>
-          </div>
-          <span class="spec-index">01</span>
-          <h3>In-line conveyor</h3>
-          <p>Modular integration for food-processing and packaging lines.</p>
-          <dl><div><dt>Target speed</dt><dd>420 items/sec</dd></div><div><dt>Envelope</dt><dd>Custom</dd></div></dl>
-        </article>
-        <article class="spec-feature">
-          <div class="spec-icon ring-icon" aria-hidden="true"><span></span></div>
-          <span class="spec-index">02</span>
-          <h3>Cleanroom-ready</h3>
-          <p>Sealed industrial enclosure designed for washdown environments.</p>
-          <dl><div><dt>Target rating</dt><dd>IP69K</dd></div><div><dt>Hygiene</dt><dd>SS316 L</dd></div></dl>
-        </article>
-        <article class="spec-feature">
-          <div class="spec-icon api-icon" aria-hidden="true"><span>{ }</span></div>
-          <span class="spec-index">03</span>
-          <h3>MES / API telemetry</h3>
-          <p>Structured events and spectral summaries for automation ecosystems.</p>
-          <dl><div><dt>Interfaces</dt><dd>REST / OPC UA</dd></div><div><dt>Edge compute</dt><dd>On-device</dd></div></dl>
-        </article>
+      <div class="export-panel">
+        <div class="export-copy"><b>Ready to share?</b><small>Export crisp, exact-size PNGs</small></div>
+        <button class="button button-dark export-main" id="exportButton" type="button">Download Feed + Story <span aria-hidden="true">↓</span></button>
+        <button class="export-secondary" id="exportPanoramaButton" type="button" hidden>Export both panorama slides</button>
+        <small class="export-size">1080 × 1350 <span>·</span> 1080 × 1920 px</small>
       </div>
-    </section>
-
-    <section class="team-section" id="team" aria-labelledby="teamTitle">
-      <div class="team-head">
-        <div>
-          <span class="section-index">04 / THE TEAM</span>
-          <h2 id="teamTitle">Built by engineers<br>who inspect the edge.</h2>
-        </div>
-        <p>Hyperspectra brings multidisciplinary expertise to spectral imaging, food systems, and intelligent industrial automation.</p>
-      </div>
-      <div class="team-grid">
-        <article class="team-card">
-          <div class="portrait portrait-sean" aria-label="Portrait placeholder for Sean Cordova"><span>SC</span></div>
-          <div class="team-meta"><span>01</span><small>TEAM MEMBER</small></div>
-          <h3>Sean Cordova</h3>
-        </article>
-        <article class="team-card">
-          <div class="portrait portrait-zareth" aria-label="Portrait placeholder for Zareth Lim"><span>ZL</span></div>
-          <div class="team-meta"><span>02</span><small>TEAM MEMBER</small></div>
-          <h3>Zareth Lim</h3>
-        </article>
-        <article class="team-card">
-          <div class="portrait portrait-aptahi" aria-label="Portrait placeholder for Aptahi Khan"><span>AK</span></div>
-          <div class="team-meta"><span>03</span><small>TEAM MEMBER</small></div>
-          <h3>Aptahi Khan</h3>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="cta-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-      <span class="section-index">PARTNER WITH HYPERSPECTRA</span>
-      <h2>Make every spectrum<br>an instrument of yield.</h2>
-      <a class="primary-btn light" href="mailto:partners@hyperspectra.example">Request a system brief <span>↗</span></a>
-    </section>
+    </aside>
   </main>
-
-  <footer>
-    <a class="brand footer-brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span>HYPERSPECTRA</span></a>
-    <p>AI-powered hyperspectral inspection</p>
-    <span>© 2026 HYPERSPECTRA</span>
-  </footer>
-
-  <script src="app.js?v=3"></script>
+  <dialog class="help-dialog" id="helpDialog" aria-labelledby="helpTitle" aria-describedby="helpIntro">
+    <div class="help-content">
+      <button class="help-close" id="helpClose" type="button" aria-label="Close guide">×</button>
+      <p class="help-kicker">FRAMESYNC · QUICK START</p>
+      <h2 id="helpTitle">From blank canvas<br />to ready-to-post.</h2>
+      <p class="help-intro" id="helpIntro">Make one composition, then download it in Feed and Story sizes.</p>
+      <ol class="help-steps">
+        <li><span>01</span><div><b>Choose a layout</b><p>Pick a template on the left. Gallery is for one photo; Film strip uses up to three; Midnight star film has four frames; Scrapbook layers two photos.</p></div></li>
+        <li><span>02</span><div><b>Add your photos</b><p>Choose <strong>Try sample photos</strong>, drop files into Your photos, or browse for JPG, PNG, or WEBP images. Photos are processed on your device.</p></div></li>
+        <li><span>03</span><div><b>Fill the frames</b><p>Click a photo to fill the highlighted frame. Click a different frame first to choose where the next photo goes; click a filled frame to replace it. Photos stay uncropped.</p></div></li>
+        <li><span>04</span><div><b>Style both formats</b><p>Use the Design Kit to adjust the background, type, caption, borders, and spacing. These choices stay in sync across Feed and Story.</p><p>For a teaser, choose <strong>Story teaser</strong> and select a mode. For a wide photo, choose <strong>Panorama</strong>.</p></div></li>
+        <li><span>05</span><div><b>Preview and download</b><p>Use Paired view, Feed only, or Story only to check your design. Download PNGs at <strong>1080 × 1350</strong> for Feed and <strong>1080 × 1920</strong> for Story. Panorama also creates two separate Feed slides.</p></div></li>
+      </ol>
+      <div class="help-actions"><span>Tip: your work stays in this browser session.</span><button class="button button-dark" id="helpDone" type="button">Got it</button></div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=1"></script>
 </body>
 </html>
