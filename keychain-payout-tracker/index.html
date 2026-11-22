@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f8f7">
+  <meta name="description" content="A simple weekly sales and payout tracker for your keychain team.">
+  <title>Keychain Payout Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Keychain Payout Tracker home">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span>Keychain <strong>Payout Tracker</strong></span>
+    </a>
+    <div class="header-actions">
+      <button class="button button-secondary" id="importButton" type="button">Import data</button>
+      <button class="button button-primary" id="exportButton" type="button">Export data</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">YOUR LITTLE BUSINESS, CLEARLY SHARED</p>
+      <h1>Make every sale <span>count.</span></h1>
+      <p>Track weekly keychain sales, effort, and fair payouts for your team.</p>
+    </section>
+
+    <section class="section-block" aria-labelledby="summaryTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">AT A GLANCE</p><h2 id="summaryTitle">Team summary</h2></div>
+      </div>
+      <div class="summary-grid" id="summaryCards"></div>
+      <article class="card leaderboard-card">
+        <div class="card-heading"><div><p class="eyebrow">WEEK AFTER WEEK</p><h3>Top sellers</h3></div><span class="subtle">Total pieces sold</span></div>
+        <ol class="leaderboard" id="leaderboard"></ol>
+      </article>
+    </section>
+
+    <section class="section-block" aria-labelledby="setupTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">MAKE IT YOURS</p><h2 id="setupTitle">Business setup</h2></div>
+        <p class="section-caption">Adjust the numbers anytime. Payouts update as you type.</p>
+      </div>
+      <article class="card setup-card">
+        <div class="setup-grid" id="setupInputs"></div>
+        <div class="setup-status" id="setupStatus" role="status" aria-live="polite"></div>
+        <p class="setup-note" id="percentageNote"></p>
+      </article>
+    </section>
+
+    <section class="section-block weeks-section" aria-labelledby="weeksTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">SALES & EFFORT</p><h2 id="weeksTitle">Weekly tracker</h2></div>
+        <button class="button button-primary" id="addWeekButton" type="button"><span aria-hidden="true">+</span> Add a week</button>
+      </div>
+      <div class="weeks-list" id="weeksList"></div>
+    </section>
+
+    <footer><span class="brand-mark brand-mark-small" aria-hidden="true">K</span> Your data stays in this browser unless you export it.</footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
